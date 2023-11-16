@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(0deg);
+    }
+    
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes background-transform {
+    0% {
+        background-color: #e2e2e2;
+    }
+
+    100% {
+        background-color: greenyellow;
+    }
+}
+
+@keyframes check-appear {
+    0% {
+        display: none;
+    }
+
+    100% {
+        display: flex;
+    }
+} 
+
+@keyframes loading-hidden {
+    0% {
+        display: none;
+    }
+}
+
+body {
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.btn_primary {
+    width: 250px;
+    height: 56px;
+    background-color: #e2e2e2;
+    border-radius: 0.25rem;
+    padding: 12px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: background-transform 200ms ease-in forwards 2s; 
+    position: relative;
+}
+
+.loading_spinner {
+    width: 35px;
+    height: 35px;
+    border: 2px solid white;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    margin: auto;
+    animation: spin 1s linear infinite;
+    
+}
+
+.wrapper .check_icon {
+    width: 35px;
+    height: 40px;
+    position: absolute;
+    animation: check-appear 400ms ease-in-out 2s backwards;
+    background-color: greenyellow;
+    
+}
